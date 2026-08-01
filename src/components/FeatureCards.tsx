@@ -1,16 +1,17 @@
 import { useLanguage } from "../context/LanguageContext";
 import {
-  IconConsulting,
-  IconConstruction,
-  IconEngineering,
-  IconSustainable,
+  IconBuildingLayout,
+  IconBuiltUpArea,
+  IconLandArea,
+  IconOperational,
 } from "./icons";
+import { SpecBody } from "./SpecBody";
 
 const expertiseIcons = [
-  IconEngineering,
-  IconConstruction,
-  IconSustainable,
-  IconConsulting,
+  IconLandArea,
+  IconBuiltUpArea,
+  IconBuildingLayout,
+  IconOperational,
 ];
 
 const projectImages = [
@@ -22,7 +23,7 @@ export function FeatureCards() {
   const { t } = useLanguage();
 
   return (
-    <section className="feature-cards" id="services" aria-label="Highlights">
+    <section className="feature-cards" id="factory" aria-label="Highlights">
       <div className="feature-cards__shell">
         <div className="feature-cards__bg" aria-hidden="true" />
         <div className="feature-cards__grid">
@@ -36,7 +37,7 @@ export function FeatureCards() {
             </div>
           </article>
 
-          <article className="card card--expertise">
+          <article className="card card--expertise" id="specifications">
             <h2>{t.expertise.title}</h2>
             <div className="expertise-grid">
               {t.expertise.items.map((item, i) => {
@@ -45,7 +46,7 @@ export function FeatureCards() {
                   <div key={item.title} className="expertise-item">
                     <Icon className="expertise-item__icon" />
                     <h3>{item.title}</h3>
-                    <p>{item.body}</p>
+                    <SpecBody text={item.body} />
                   </div>
                 );
               })}

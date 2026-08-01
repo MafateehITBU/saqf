@@ -1,18 +1,29 @@
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import { whatsappUrl } from "../lib/whatsapp";
 
-const navIds = ["home", "projects", "services", "about", "contact"] as const;
-type NavId = (typeof navIds)[number];
+const navItems = [
+  { id: "home", href: "#home" },
+  { id: "about", href: "#about" },
+  { id: "specifications", href: "#specifications" },
+  { id: "investment", href: "#overview" },
+  { id: "contact", href: "#cta" },
+] as const;
 
-const cardsNavIds: NavId[] = ["projects", "services", "about"];
+type NavId = (typeof navItems)[number]["id"];
+
+const cardsNavIds: NavId[] = ["about", "specifications"];
 
 function navFromHash(): NavId | null {
   const hash = window.location.hash.replace("#", "");
-  return navIds.includes(hash as NavId) ? (hash as NavId) : null;
+  if (hash === "overview") return "investment";
+  if (hash === "cta") return "contact";
+  if (hash === "services" || hash === "projects") return "specifications";
+  return navItems.some((item) => item.id === hash) ? (hash as NavId) : null;
 }
 
 export function Header() {
-  const { t, lang, toggleLang } = useLanguage();
+  const { t, lang, toggleLang, isFlipping } = useLanguage();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState<NavId>("home");
@@ -25,7 +36,6 @@ export function Header() {
 
     clickLock.current = id;
     if (lockTimer.current) window.clearTimeout(lockTimer.current);
-    // Keep clicked item active while smooth-scroll finishes
     lockTimer.current = window.setTimeout(() => {
       clickLock.current = null;
     }, 1200);
@@ -48,28 +58,28 @@ export function Header() {
       }
 
       const home = document.getElementById("home");
-      const cards = document.getElementById("services");
+      const cards = document.getElementById("factory");
       const overview = document.getElementById("overview");
-      const contact = document.getElementById("contact");
-      if (!home || !cards || !contact) return;
+      const cta = document.getElementById("cta");
+      if (!home || !cards || !overview || !cta) return;
 
       const homeBottom = home.getBoundingClientRect().bottom;
-      const contactTop = contact.getBoundingClientRect().top;
-      const overviewTop = overview?.getBoundingClientRect().top ?? contactTop;
+      const overviewTop = overview.getBoundingClientRect().top;
+      const ctaTop = cta.getBoundingClientRect().top;
 
-      // Footer in view
-      if (contactTop < window.innerHeight * 0.65) {
+      if (ctaTop < window.innerHeight * 0.6) {
         setActive("contact");
         return;
       }
 
-      // Past hero / into cards band (handles hero overlap)
+      if (overviewTop < 240) {
+        setActive("investment");
+        return;
+      }
+
       if (homeBottom < 200 || cards.getBoundingClientRect().top < 220) {
-        // Still in cards area (not yet deep into overview)
-        if (overviewTop > 220) {
-          setActive((prev) => (cardsNavIds.includes(prev) ? prev : "services"));
-          return;
-        }
+        setActive((prev) => (cardsNavIds.includes(prev) ? prev : "about"));
+        return;
       }
 
       setActive("home");
@@ -91,6 +101,7 @@ export function Header() {
   }, []);
 
   const close = () => setOpen(false);
+  const wa = whatsappUrl(t.footer.phone);
 
   return (
     <header className={`header ${scrolled ? "is-scrolled" : ""}`}>
@@ -108,26 +119,25 @@ export function Header() {
         </a>
 
         <nav className={`header__nav ${open ? "is-open" : ""}`} aria-label="Primary">
-          {navIds.map((id) => (
+          {navItems.map((item) => (
             <a
-              key={id}
-              href={`#${id}`}
-              className={`header__link ${active === id ? "is-active" : ""}`}
+              key={item.id}
+              href={item.href}
+              className={`header__link ${active === item.id ? "is-active" : ""}`}
               onClick={() => {
-                activate(id, true);
+                activate(item.id, true);
                 close();
               }}
             >
-              {t.nav[id]}
+              {t.nav[item.id]}
             </a>
           ))}
           <a
-            href="#contact"
+            href={wa}
             className="btn btn--primary header__nav-cta"
-            onClick={() => {
-              activate("contact", true);
-              close();
-            }}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={close}
           >
             {t.nav.getStarted}
           </a>
@@ -138,14 +148,16 @@ export function Header() {
             type="button"
             className="lang-toggle"
             onClick={toggleLang}
+            disabled={isFlipping}
             aria-label={lang === "en" ? "العربية" : "English"}
           >
             {lang === "en" ? "العربية" : "EN"}
           </button>
           <a
-            href="#contact"
+            href={wa}
             className="btn btn--primary header__cta-desktop"
-            onClick={() => activate("contact", true)}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             {t.nav.getStarted}
           </a>

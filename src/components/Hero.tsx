@@ -1,4 +1,5 @@
 import { useLanguage } from "../context/LanguageContext";
+import { whatsappUrl } from "../lib/whatsapp";
 
 export function Hero() {
   const { t } = useLanguage();
@@ -22,7 +23,12 @@ export function Hero() {
       <div className="hero__content">
         <h1 className="hero__title">{t.hero.title}</h1>
         <p className="hero__subtitle">{t.hero.subtitle}</p>
-        <a href="#about" className="btn btn--primary">
+        <a
+          href={whatsappUrl(t.footer.phone)}
+          className="btn btn--primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           {t.hero.cta}
         </a>
       </div>

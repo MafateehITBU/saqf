@@ -18,15 +18,18 @@ alwaysApply: true
 - **Fonts:** Cormorant Garamond (serif headings), Manrope (sans body/nav)
 
 ## Design (match attached mockup)
-1. Transparent nav over hero: logo | links | Get Started + EN/AR toggle; mobile hamburger drawer
+1. Sticky nav: logo | Home · The Factory · Specifications · Investment · Contact | Get in Touch (WhatsApp) + EN/AR; Contact → `#cta`
 2. Hero: full-bleed **background video** + dark gradient overlay, left-aligned headline/sub/CTA
 3. Cards overlap hero (no white gap): `--hero-overlap` + side/mid pop; navy band height `--band-h`; About image `public/images/about-building.jpg`; expertise cross dividers
-4. Company Overview (white): text + gold stats left, office image right
-5. Dark footer with logo, contact, copyright
+4. Company Overview (white): USP list (gold index + title + body) left, office image right — not numeric stats
+5. CTA band after overview (navy): title, body, WhatsApp button only — EN/AR in `translations.cta`
+6. Dark footer with logo, contact, copyright
 
 ## File map
 - `src/App.tsx` — page composition
-- `src/components/{Header,Hero,FeatureCards,CompanyOverview,Footer,icons}.tsx`
+- `src/components/{Header,Hero,FeatureCards,CompanyOverview,Footer,SpecBody,icons}.tsx`
+- Hero CTA opens WhatsApp for `footer.phone` (`+962796547704`)
+- Specs card: title “Specifications” / “المواصفات”; `SpecBody` turns `\n` lines into bullets
 - `src/context/LanguageContext.tsx` — lang + `dir` on `<html>`
 - `src/i18n/translations.ts` — EN/AR copy
 - `src/index.css` — all layout/visual styles
@@ -38,10 +41,14 @@ alwaysApply: true
 - **Update this memory file on every meaningful change**
 
 ## Changelog
+- 2026-08-01: Language swap via elegant navy veil + gold Saqf/سقف mark (no page blur/distort)
+- 2026-08-01: Floating WhatsApp button (gold bg, white icon); `inset-inline-end` → right in EN, left in AR; fixed while scrolling
+- 2026-08-01: Header nav updated for factory page — Home/Factory/Specs/Investment/Contact→CTA; Get in Touch→WhatsApp; scroll spy updated
+- 2026-08-01: CTA section: added bottom margin gap before footer
+- 2026-08-01: CTA section: removed phone/emoji; button only (WhatsApp)
+- 2026-08-01: Added bilingual CTA section after overview (`CtaSection`, WhatsApp + tel)
+- 2026-08-01: Overview “stats” redesigned as USPs (numbered list, title + body; `\n` → bullets)
+- 2026-08-01: Expertise icons top-aligned across the 2×2 grid
+- 2026-08-01: Hero title/subtitle shared wider max-width; CTA → WhatsApp (`wa.me` + footer phone); middle card renamed Specifications; `\n` body → lead + bullets; spec icons (land/built-up/floors/ready)
+- 2026-08-01: Initial commit pushed to `origin/main` — “Add Saqf bilingual landing page with video hero and brand UI.”
 - 2026-08-01: Nav click lock (~1.2s) so scroll spy doesn’t reset Projects/Services/About back to Home during overlap scroll
-- 2026-08-01: Primary button text set to white (`#fffeff`)
-- 2026-08-01: Buttons use slight side radius (`8px`) instead of fully pill-shaped
-- 2026-08-01: Fixed Header.tsx parse error (missing `>` on sticky `<header>` tag)
-- 2026-08-01: Favicon set to transparent cropped logo; header made sticky (`fixed` + scrolled glass bg)
-- 2026-08-01: Header logo switched to transparent PNG (`saqf-logo-transparent.png`); removed `mix-blend-mode` on header logo
-- 2026-08-01: Scaffolded Vite React TS; brand colors/logo; EN/AR i18n + RTL; sections (nav, video hero, 3 cards, overview, footer); mobile menu; project memory created
