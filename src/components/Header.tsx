@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../context/LanguageContext";
+import { asset } from "../lib/asset";
 import { whatsappUrl } from "../lib/whatsapp";
 
 const navItems = [
@@ -115,7 +116,7 @@ export function Header() {
             close();
           }}
         >
-          <img src="/images/saqf-logo-transparent.png" alt="سقف — Saqf Property Collective" />
+          <img src={asset("images/saqf-logo-transparent.png")} alt="سقف — Saqf Property Collective" />
         </a>
 
         <nav className={`header__nav ${open ? "is-open" : ""}`} aria-label="Primary">

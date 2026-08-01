@@ -1,4 +1,5 @@
 import { useLanguage } from "../context/LanguageContext";
+import { asset } from "../lib/asset";
 
 export function Footer() {
   const { t } = useLanguage();
@@ -9,7 +10,7 @@ export function Footer() {
       <div className="footer__inner">
         <div className="footer__brand">
           <img
-            src="/images/saqf-logo-transparent.png"
+            src={asset("images/saqf-logo-transparent.png")}
             alt="سقف — Saqf Property Collective"
           />
           <p>{t.footer.tagline}</p>

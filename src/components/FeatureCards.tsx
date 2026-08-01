@@ -1,4 +1,5 @@
 import { useLanguage } from "../context/LanguageContext";
+import { asset } from "../lib/asset";
 import {
   IconBuildingLayout,
   IconBuiltUpArea,
@@ -33,7 +34,7 @@ export function FeatureCards() {
               <p>{t.aboutCard.body}</p>
             </div>
             <div className="card__media">
-              <img src="/images/about-building.jpg" alt="" />
+              <img src={asset("images/about-building.jpg")} alt="" />
             </div>
           </article>
 
