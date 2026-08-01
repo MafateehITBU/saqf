@@ -1,0 +1,47 @@
+---
+description: Saqf landing page project memory — update on every change
+alwaysApply: true
+---
+
+# Saqf Project Memory
+
+## Project
+- **Name:** Saqf / سقف (Saqf Property Collective)
+- **Type:** Frontend-only one-page landing page (no backend)
+- **Stack:** Vite + React + TypeScript
+- **Languages:** English (LTR) + Arabic (RTL), toggle in nav; preference in `localStorage` (`saqf-lang`)
+
+## Brand
+- **Colors:** `#202350` (navy), `#dbb382` (gold), `#fffeff` (off-white)
+- **Logo:** `public/images/saqf-logo.png` (original); header uses `public/images/saqf-logo-transparent.png`; favicon `public/images/favicon.png` (transparent, cropped)
+- **Header:** `position: fixed` sticky; gains navy glass background after scroll (`.is-scrolled`)
+- **Fonts:** Cormorant Garamond (serif headings), Manrope (sans body/nav)
+
+## Design (match attached mockup)
+1. Transparent nav over hero: logo | links | Get Started + EN/AR toggle; mobile hamburger drawer
+2. Hero: full-bleed **background video** + dark gradient overlay, left-aligned headline/sub/CTA
+3. Cards overlap hero (no white gap): `--hero-overlap` + side/mid pop; navy band height `--band-h`; About image `public/images/about-building.jpg`; expertise cross dividers
+4. Company Overview (white): text + gold stats left, office image right
+5. Dark footer with logo, contact, copyright
+
+## File map
+- `src/App.tsx` — page composition
+- `src/components/{Header,Hero,FeatureCards,CompanyOverview,Footer,icons}.tsx`
+- `src/context/LanguageContext.tsx` — lang + `dir` on `<html>`
+- `src/i18n/translations.ts` — EN/AR copy
+- `src/index.css` — all layout/visual styles
+- `public/images/saqf-logo.png` — brand logo
+
+## Constraints
+- Keep design identical to mockup; hero uses video instead of still image
+- No backend; static assets / CDN media only
+- **Update this memory file on every meaningful change**
+
+## Changelog
+- 2026-08-01: Nav click lock (~1.2s) so scroll spy doesn’t reset Projects/Services/About back to Home during overlap scroll
+- 2026-08-01: Primary button text set to white (`#fffeff`)
+- 2026-08-01: Buttons use slight side radius (`8px`) instead of fully pill-shaped
+- 2026-08-01: Fixed Header.tsx parse error (missing `>` on sticky `<header>` tag)
+- 2026-08-01: Favicon set to transparent cropped logo; header made sticky (`fixed` + scrolled glass bg)
+- 2026-08-01: Header logo switched to transparent PNG (`saqf-logo-transparent.png`); removed `mix-blend-mode` on header logo
+- 2026-08-01: Scaffolded Vite React TS; brand colors/logo; EN/AR i18n + RTL; sections (nav, video hero, 3 cards, overview, footer); mobile menu; project memory created
