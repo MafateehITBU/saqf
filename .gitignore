@@ -23,6 +23,5 @@ dist-ssr
 *.sln
 *.sw?
 
-# Large local media (compress before committing)
+# Large original media (keep local only)
 src/assets/*.mp4
-public/videos/*.mp4
