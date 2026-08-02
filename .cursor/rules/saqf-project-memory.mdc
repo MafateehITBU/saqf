@@ -41,6 +41,8 @@ alwaysApply: true
 - **Update this memory file on every meaningful change**
 
 ## Changelog
+- 2026-08-02: Mobile drawer has visible × close button at top
+- 2026-08-02: Mobile nav → side drawer + solid navy bg + backdrop (outside header)
 - 2026-08-02: Projects card → “Factory Location” / “موقع المصنع”; image labels removed
 - 2026-08-02: Cards use local assets — about.png, proj1.png, proj2.png; overview.png
 - 2026-08-02: Fixed overview image import (`overview.png`, not `.jpg`)

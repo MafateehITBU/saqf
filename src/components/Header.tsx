@@ -104,77 +104,118 @@ export function Header() {
   const close = () => setOpen(false);
   const wa = whatsappUrl(t.footer.phone);
 
-  return (
-    <header className={`header ${scrolled ? "is-scrolled" : ""}`}>
-      <div className="header__inner">
+  const links = (
+    <>
+      {navItems.map((item) => (
         <a
-          href="#home"
-          className="header__logo"
-          aria-label="Saqf"
+          key={item.id}
+          href={item.href}
+          className={`header__link ${active === item.id ? "is-active" : ""}`}
           onClick={() => {
-            activate("home", true);
+            activate(item.id, true);
             close();
           }}
         >
-          <img src={asset("images/saqf-logo-transparent.png")} alt="سقف — Saqf Property Collective" />
+          {t.nav[item.id]}
         </a>
+      ))}
+    </>
+  );
 
-        <nav className={`header__nav ${open ? "is-open" : ""}`} aria-label="Primary">
-          {navItems.map((item) => (
-            <a
-              key={item.id}
-              href={item.href}
-              className={`header__link ${active === item.id ? "is-active" : ""}`}
-              onClick={() => {
-                activate(item.id, true);
-                close();
-              }}
+  return (
+    <>
+      <header className={`header ${scrolled ? "is-scrolled" : ""}`}>
+        <div className="header__inner">
+          <a
+            href="#home"
+            className="header__logo"
+            aria-label="Saqf"
+            onClick={() => {
+              activate("home", true);
+              close();
+            }}
+          >
+            <img
+              src={asset("images/saqf-logo-transparent.png")}
+              alt="سقف — Saqf Property Collective"
+            />
+          </a>
+
+          <nav className="header__nav" aria-label="Primary">
+            {links}
+          </nav>
+
+          <div className="header__actions">
+            <button
+              type="button"
+              className="lang-toggle"
+              onClick={toggleLang}
+              disabled={isFlipping}
+              aria-label={lang === "en" ? "العربية" : "English"}
             >
-              {t.nav[item.id]}
+              {lang === "en" ? "العربية" : "EN"}
+            </button>
+            <a
+              href={wa}
+              className="btn btn--primary header__cta-desktop"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t.nav.getStarted}
             </a>
-          ))}
+            <button
+              type="button"
+              className={`menu-toggle ${open ? "is-open" : ""}`}
+              aria-expanded={open}
+              aria-controls="mobile-drawer"
+              aria-label={open ? "Close menu" : "Open menu"}
+              onClick={() => setOpen((v) => !v)}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <button
+        type="button"
+        className={`nav-backdrop ${open ? "is-open" : ""}`}
+        aria-label="Close menu"
+        tabIndex={open ? 0 : -1}
+        onClick={close}
+      />
+
+      <nav
+        id="mobile-drawer"
+        className={`nav-drawer ${open ? "is-open" : ""}`}
+        aria-label="Mobile"
+        aria-hidden={!open}
+      >
+        <div className="nav-drawer__inner">
+          <div className="nav-drawer__top">
+            <button
+              type="button"
+              className="nav-drawer__close"
+              onClick={close}
+              aria-label={lang === "ar" ? "إغلاق القائمة" : "Close menu"}
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          {links}
           <a
             href={wa}
-            className="btn btn--primary header__nav-cta"
+            className="btn btn--primary nav-drawer__cta"
             target="_blank"
             rel="noopener noreferrer"
             onClick={close}
           >
             {t.nav.getStarted}
           </a>
-        </nav>
-
-        <div className="header__actions">
-          <button
-            type="button"
-            className="lang-toggle"
-            onClick={toggleLang}
-            disabled={isFlipping}
-            aria-label={lang === "en" ? "العربية" : "English"}
-          >
-            {lang === "en" ? "العربية" : "EN"}
-          </button>
-          <a
-            href={wa}
-            className="btn btn--primary header__cta-desktop"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {t.nav.getStarted}
-          </a>
-          <button
-            type="button"
-            className={`menu-toggle ${open ? "is-open" : ""}`}
-            aria-expanded={open}
-            aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((v) => !v)}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
         </div>
-      </div>
-    </header>
+      </nav>
+    </>
   );
 }
