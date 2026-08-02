@@ -41,6 +41,9 @@ alwaysApply: true
 - **Update this memory file on every meaningful change**
 
 ## Changelog
+- 2026-08-02: Projects card → “Factory Location” / “موقع المصنع”; image labels removed
+- 2026-08-02: Cards use local assets — about.png, proj1.png, proj2.png; overview.png
+- 2026-08-02: Fixed overview image import (`overview.png`, not `.jpg`)
 - 2026-08-02: Hero video → compressed `drone.MP4` as `public/videos/saqf-hero.mp4` (~20MB); originals in `src/assets` gitignored; Pexels fallback kept
 - 2026-08-01: Fixed Pages asset URLs via `asset()` + `import.meta.env.BASE_URL` (logo/about image)
 - 2026-08-01: GitHub Pages deploy — `base: '/saqf/'` + `.github/workflows/deploy.yml`

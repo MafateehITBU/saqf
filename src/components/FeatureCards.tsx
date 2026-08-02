@@ -1,5 +1,7 @@
+import aboutImage from "../assets/about.png";
+import proj1Image from "../assets/proj1.png";
+import proj2Image from "../assets/proj2.png";
 import { useLanguage } from "../context/LanguageContext";
-import { asset } from "../lib/asset";
 import {
   IconBuildingLayout,
   IconBuiltUpArea,
@@ -15,10 +17,7 @@ const expertiseIcons = [
   IconOperational,
 ];
 
-const projectImages = [
-  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80",
-];
+const projectImages = [proj1Image, proj2Image];
 
 export function FeatureCards() {
   const { t } = useLanguage();
@@ -34,7 +33,7 @@ export function FeatureCards() {
               <p>{t.aboutCard.body}</p>
             </div>
             <div className="card__media">
-              <img src={asset("images/about-building.jpg")} alt="" />
+              <img src={aboutImage} alt="" />
             </div>
           </article>
 
@@ -58,10 +57,9 @@ export function FeatureCards() {
             <h2>{t.projects.title}</h2>
             <div className="project-list">
               {t.projects.items.map((project, i) => (
-                <a key={project.name} href="#projects" className="project-tile">
-                  <img src={projectImages[i]} alt={project.name} />
-                  <span className="project-tile__label">{project.name}</span>
-                </a>
+                <div key={project.name} className="project-tile">
+                  <img src={projectImages[i]} alt="" />
+                </div>
               ))}
             </div>
           </article>

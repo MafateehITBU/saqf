@@ -42,7 +42,7 @@ export const translations = {
       ],
     },
     projects: {
-      title: "Recent Projects",
+      title: "Factory Location",
       items: [
         { name: "International Tower", image: "project-1" },
         { name: "Horizon Residences", image: "project-2" },
@@ -127,7 +127,7 @@ export const translations = {
       ],
     },
     projects: {
-      title: "أحدث المشاريع",
+      title: "موقع المصنع",
       items: [
         { name: "البرج الدولي", image: "project-1" },
         { name: "مساكن الأفق", image: "project-2" },

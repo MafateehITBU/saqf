@@ -1,4 +1,5 @@
 import { useLanguage } from "../context/LanguageContext";
+import overviewImage from "../assets/overview.png";
 
 function UspBody({ text }: { text: string }) {
   const parts = text
@@ -43,7 +44,7 @@ export function CompanyOverview() {
         </div>
         <div className="overview__image">
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80"
+            src={overviewImage}
             alt=""
           />
         </div>
