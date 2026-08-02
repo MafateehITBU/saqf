@@ -41,6 +41,7 @@ alwaysApply: true
 - **Update this memory file on every meaningful change**
 
 ## Changelog
+- 2026-08-02: Hero still on Pexels for Pages — local `سقف.mp4` is ~1.1GB (over GitHub 100MB limit); compress to `public/videos/saqf-hero.mp4` then switch
 - 2026-08-01: Fixed Pages asset URLs via `asset()` + `import.meta.env.BASE_URL` (logo/about image)
 - 2026-08-01: GitHub Pages deploy — `base: '/saqf/'` + `.github/workflows/deploy.yml`
 - 2026-08-01: Language swap via elegant navy veil + gold Saqf/سقف mark (no page blur/distort)
