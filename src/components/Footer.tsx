@@ -26,7 +26,6 @@ export function Footer() {
 
           <div className="footer__contact">
             <span className="footer__label">{t.nav.contact}</span>
-            <a href={`mailto:${t.footer.email}`}>{t.footer.email}</a>
             <a
               className="footer__phone"
               href={`tel:${t.footer.phone.replace(/\s/g, "")}`}
