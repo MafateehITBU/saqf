@@ -1005,6 +1005,12 @@ html.is-lang-flipping {
   color: var(--gold);
 }
 
+.footer__phone {
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: start;
+}
+
 .footer__links {
   display: flex;
   flex-wrap: wrap;

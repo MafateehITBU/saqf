@@ -41,6 +41,7 @@ alwaysApply: true
 - **Update this memory file on every meaningful change**
 
 ## Changelog
+- 2026-08-06: Footer phone forced LTR (`dir="ltr"`) so +962 stays left-to-right in Arabic
 - 2026-08-06: Phone number display unified to `+962 79 654 7704`
 - 2026-08-02: Mobile drawer has visible × close button at top
 - 2026-08-02: Mobile nav → side drawer + solid navy bg + backdrop (outside header)

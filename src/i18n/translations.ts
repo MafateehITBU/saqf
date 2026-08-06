@@ -158,7 +158,6 @@ export const translations = {
       tagline: "سقف العقارية",
       rights: "جميع الحقوق محفوظة.",
       projectBy: "مشروع من",
-      email: "hello@saqf.com",
       phone: "+962 79 654 7704",
     },
   },
