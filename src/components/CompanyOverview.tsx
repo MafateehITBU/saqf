@@ -36,7 +36,8 @@ export function CompanyOverview() {
                 </span>
                 <div className="usp__content">
                   <h3 className="usp__title">{usp.title}</h3>
-                  <UspBody text={usp.body} />
+                  {/* if there's body string, show it */}
+                  {typeof usp === "object" && "body" in usp && <UspBody text={usp.body} />}
                 </div>
               </li>
             ))}

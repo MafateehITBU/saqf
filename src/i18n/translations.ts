@@ -12,13 +12,13 @@ export const translations = {
       getStarted: "Get in Touch",
     },
     hero: {
-      title: "More Than a Factory... A Smart Investment Opportunity.",
-      subtitle: "A fully operational industrial facility for sale, strategically located and designed to support your business growth from day one.",
-      cta: "Contact Us",
+      title: "More Than a Factory... A Foundation for Bigger Opportunities.",
+      subtitle: "A fully equipped industrial facility, ready for immediate operation, offering a prime location and versatile spaces suitable for purchase, leasing, or strategic investment partnerships.",
+      cta: "Book a Site Visit",
     },
     aboutCard: {
       title: "Why This Factory?",
-      body: "Invest in a fully operational industrial facility that saves you valuable time, reduces setup costs, and provides everything you need to start operating immediately. Combining a strategic location, well-planned spaces, and turnkey readiness, this factory is an ideal opportunity for investors and manufacturers seeking a high-value industrial asset with long-term growth potential.",
+      body: "If you're looking for a facility that eliminates lengthy setup times and allows you to start operations immediately, this factory is the ideal choice. With its strategic location, practical layout, and turnkey readiness, it provides an excellent environment for a wide range of industrial operations and investment opportunities.",
     },
     expertise: {
       title: "Factory Specifications",
@@ -52,38 +52,33 @@ export const translations = {
       title: "Why It's a Great Investment",
       usps: [
         {
-          title: "Direct Sale from the Owner",
-          body: "Purchase directly from the owner with no commissions or intermediary fees.",
+          title: "Available for Sale, Lease, or Investment Partnership",
         },
         {
           title: "Complete Legal Documentation",
-          body: "All legal documents are in place and ready for a smooth ownership transfer.",
         },
         {
           title: "Ready for Immediate Operation",
-          body: "Take possession and begin your operations without delays or additional preparation.",
         },
         {
-          title: "Purpose-Built Facilities",
-          body: "Designed to support industrial operations with dedicated staff facilities and infrastructure suitable for efficient production.",
+          title: "Employee Facilities",
         },
         {
           title: "Strategic Location",
-          body: "Only 6 km from Abdoun Circle\nClose to 5B Mall\nNear the Industrial City\nEasy access to major transportation routes",
+          body: "Only 6 km from Abdoun Circle\nClose to 5B Mall",
         },
       ],
     },
     cta: {
       title: "Your Next Investment Starts Here.",
-      body: "Looking for an industrial facility that offers the perfect combination of location, space, and operational readiness? This is an opportunity built for long-term value and business growth.",
-      button: "Get in Touch",
+      body: "Whether you're looking to purchase, lease, or invest in a fully operational industrial facility, this property offers the location, space, and readiness to support your long-term success.",
+      button: "Contact Us Today",
     },
     footer: {
       tagline: "Saqf Property Collective",
       rights: "All rights reserved.",
       projectBy: "Project by",
-      email: "hello@saqf.com",
-      phone: "+962796547704",
+      phone: "+962 79 654 7704",
     },
   },
   ar: {
@@ -97,13 +92,13 @@ export const translations = {
       getStarted: "تواصل معنا الآن",
     },
     hero: {
-      title: "ليس مجرد مصنع... بل فرصة استثمارية لأعمال أكبر.",
-      subtitle: "مصنع صناعي متكامل للبيع، جاهز للتشغيل، بموقع استراتيجي ومساحات تدعم نمو أعمالك.",
+      title: "ليس مجرد مصنع… بل فرصة لمشروع أكبر",
+      subtitle: "مصنع صناعي متكامل وجاهز للتشغيل، بموقع مميز ومساحات تناسب مختلف أنواع الاستثمار، سواء بالشراء أو التأجير أو الشراكة الاستثمارية",
       cta: "احجز معاينة الآن",
     },
     aboutCard: {
       title: "لماذا هذا المصنع؟",
-      body: "استثمر في مصنع جاهز يختصر عليك الوقت والتكاليف، ويمنحك بيئة عمل متكاملة تدعم النمو منذ اليوم الأول.\nيجمع هذا المصنع بين الموقع الاستراتيجي، والمساحات المدروسة، وجاهزية التشغيل، ليكون خيارًا مثاليًا للمستثمرين وأصحاب المصانع الباحثين عن أصل صناعي جاهز يحقق قيمة طويلة الأمد.",
+      body: "إذا كنت تبحث عن مصنع جاهز يوفّر عليك وقت التجهيز، فهذا المصنع يقدّم بيئة مناسبة للبدء مباشرة. يجمع بين موقع مميز، ومساحات عملية، وجاهزية للتشغيل، مما يجعله مناسبًا لمختلف الأنشطة الصناعية والاستثمارية.",
     },
     expertise: {
       title: "مواصفات المصنع",
@@ -137,30 +132,26 @@ export const translations = {
       title: "لماذا يعتبر فرصة استثمارية؟",
       usps: [
         {
-          title: "بيع مباشر من المالك",
-          body: "بدون أي عمولات أو وسطاء.",
+          title: "مناسب للبيع أو التأجير أو الشراكة الاستثمارية."
         },
         {
-          title: "جميع الأوراق القانونية مكتملة",
-          body: "جاهزة لنقل الملكية.",
+          title: "جميع الأوراق القانونية مكتملة.جميع الأوراق القانونية مكتملة"
         },
         {
-          title: "جاهز للتشغيل",
-          body: "استلم وابدأ أعمالك مباشرة.",
+          title: "جاهز للتشغيل والاستلام"
         },
         {
-          title: "المرافق والخدمات",
-          body: "مرافق مخصصة للموظفين والعاملين، مع بنية مناسبة للتشغيل.",
+          title: "يحتوي على مرافق مخصصة للموظفين والعاملين."
         },
         {
-          title: "موقع استراتيجي",
-          body: "يبعد 6 كم عن دوار عبدون.\nقريب من 5B Mall.\nقريب من المدينة الصناعية.",
+          title: "يقع في موقع يسهل الوصول إليه",
+          body: "قريب من التنظيم الصناعي .\nقريب من 5B Mall.\nيبعد 6 كم عن دوار عبدون.",
         },
       ],
     },
     cta: {
       title: "من هنا تبدأ فرصتك الاستثمارية.",
-      body: "هل تبحث عن مصنع يجمع بين الموقع، والمساحة، والجاهزية؟",
+      body: "إذا كنت تبحث عن مصنع يجمع بين الموقع، والمساحة، والجاهزية، تواصل معنا لمعرفة المزيد أو لحجز موعد للمعاينة",
       button: "تواصل معنا الآن",
     },
     footer: {
@@ -168,7 +159,7 @@ export const translations = {
       rights: "جميع الحقوق محفوظة.",
       projectBy: "مشروع من",
       email: "hello@saqf.com",
-      phone: "+962796547704",
+      phone: "+962 79 654 7704",
     },
   },
 } as const;

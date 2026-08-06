@@ -28,7 +28,7 @@ alwaysApply: true
 ## File map
 - `src/App.tsx` — page composition
 - `src/components/{Header,Hero,FeatureCards,CompanyOverview,Footer,SpecBody,icons}.tsx`
-- Hero CTA opens WhatsApp for `footer.phone` (`+962796547704`)
+- Hero CTA opens WhatsApp for `footer.phone` (`+962 79 654 7704`)
 - Specs card: title “Specifications” / “المواصفات”; `SpecBody` turns `\n` lines into bullets
 - `src/context/LanguageContext.tsx` — lang + `dir` on `<html>`
 - `src/i18n/translations.ts` — EN/AR copy
@@ -41,6 +41,7 @@ alwaysApply: true
 - **Update this memory file on every meaningful change**
 
 ## Changelog
+- 2026-08-06: Phone number display unified to `+962 79 654 7704`
 - 2026-08-02: Mobile drawer has visible × close button at top
 - 2026-08-02: Mobile nav → side drawer + solid navy bg + backdrop (outside header)
 - 2026-08-02: Projects card → “Factory Location” / “موقع المصنع”; image labels removed
